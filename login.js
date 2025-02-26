@@ -63,7 +63,7 @@ function main(e){
             textLogin.style.display = '';
         }
         clearInputFields(["userId", "currentPassword", "newPassword", "confirmPassword"]);
-        let uri = `/nexdist/userchangepassword?action=save&userID=${encodeURIComponent(userID)}&password=${encodeURIComponent(currentPassword)}&newPassword=${encodeURIComponent(newPassword)}`
+        let uri = `/nexdist/userchangepassword?action=save&userID=${clearInputFields(userId)}&password=${clearInputFields(currentPassword)}&newPassword=${clearInputFields(newPassword)}`
         let responseData = fetch(uri).then(response => {
             if (!response.ok) {
                 showError("Gagal mereset password")
