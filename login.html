@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form with Password Reset</title>
+    <link rel="stylesheet" href="login.css" type="text/css">
+    <script src="login.js"></script>
+</head>
+<body>
+
+<div id="container" style="position: relative; display: flex; justify-content: center; align-items: center;">
+    <div class="login-container" id="loginContainer" style="position: fixed;">
+        <h2 id="text-login">Login</h2>
+        <form id="loginForm">
+            <input type="text" class="input-field" id="userId" placeholder="UserId" required>
+            <input type="password" class="input-field" id="password" placeholder="Password" required>
+            <button type="submit" class="action-btn">Login</button>
+        </form>
+        <div class="forgot-password">
+            <a href="#" id="forgotPasswordLink">Forgot Password?</a>
+        </div>
+    
+        <div class="password-fields" id="passwordFields">
+            <h2>Reset Password</h2>
+            <input type="text" class="input-field" id="userId" placeholder="UserId" required>
+            <input type="password" class="input-field" id="currentPassword" placeholder="Current Password" required>
+            <input type="password" class="input-field" id="newPassword" placeholder="New Password" required>
+            <input type="password" class="input-field" id="confirmPassword" placeholder="Confirm Password" required>
+            <button type="submit" class="action-btn" id="resetButton">Reset Password</button>
+        </div>
+    </div>
+    <div id="myModal" class="modal" style="position: fixed;">
+        <div class="modal-content-hide" id="content-popup">
+            <h3>Login Attempt</h3>
+            <p id="loginmessage"></p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

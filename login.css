@@ -1,0 +1,83 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.login-container {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+h2 {
+    color: #333;
+}
+.input-field {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+.input-field:focus {
+    border-color: #5c9ecf;
+    outline: none;
+}
+.action-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #5c9ecf;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.action-btn:hover {
+    background-color: #478ba1;
+}
+.forgot-password {
+    font-size: 14px;
+    margin-top: 10px;
+}
+.forgot-password a {
+    color: #5c9ecf;
+    text-decoration: none;
+}
+.forgot-password a:hover {
+    text-decoration: underline;
+}
+.password-fields {
+    display: none;
+}
+.modal-content-hide {
+    opacity: 0;
+    padding: 0px;
+    border: 0px solid #888;
+    width: 0%;
+    max-width: 0px;
+    border-radius: 0px;
+}
+.modal-content-show {
+    display: flex;                  
+    flex-direction: column;          
+    justify-content: center;         
+    align-items: center;             
+    text-align: center;  
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 8px;
+    opacity: 1;
+    
+}
