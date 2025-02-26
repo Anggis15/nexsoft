@@ -17,8 +17,8 @@ function main(e){
     loginForm.addEventListener('submit', function(event) {
         event.preventDefault();
         const uri = "/api/login"
-        const userId = document.getElementById('userId').value;
-        const password = document.getElementById('password').value;
+        const userId = sanitizeInput(document.getElementById('userId').value);
+        const password = sanitizeInput(document.getElementById('password').value);
         let message = validatePasswordFields(userId,password,null,null)
         if(message){
             showError(message)
@@ -149,4 +149,7 @@ function clearInputFields(fieldIds) {
         if (field)
             field.value = "";
     });
+}
+function sanitizeInput(input) {
+    return input.replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
