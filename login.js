@@ -62,6 +62,7 @@ function main(e){
             forgotPasswordLink.style.display = 'block';
             textLogin.style.display = '';
         }
+        clearInputFields(["userId", "currentPassword", "newPassword", "confirmPassword"]);
         let uri = `/nexdist/userchangepassword?action=save&userID=${encodeURIComponent(userID)}&password=${encodeURIComponent(currentPassword)}&newPassword=${encodeURIComponent(newPassword)}`
         let responseData = fetch(uri).then(response => {
             if (!response.ok) {
@@ -74,7 +75,8 @@ function main(e){
             .catch(error => {
                 showError("Gagal mereset password")
             });
-        alert('Password reset successfully!');
+        
+        showError('Password reset successfully!');
             passwordFields.style.display = 'none';
             loginForm.style.display = 'block';
             forgotPasswordLink.style.display = 'block';
@@ -82,7 +84,7 @@ function main(e){
     });
 
     
-
+    clearInputFields()
     
     actionBtn.addEventListener('click', function() {
         if (actionBtn.textContent === 'Login') {
