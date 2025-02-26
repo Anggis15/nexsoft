@@ -1,5 +1,4 @@
-
-document.addEventListener("DOMContentLoaded", function () {
+function main(e){
     const forgotPasswordLink = document.getElementById('forgotPasswordLink');
     const loginForm = document.getElementById('loginForm');
     const passwordFields = document.getElementById('passwordFields');
@@ -93,7 +92,9 @@ document.addEventListener("DOMContentLoaded", function () {
             
         }
     });
-});
+}
+
+document.addEventListener("DOMContentLoaded", main)
 
 
 
