@@ -66,7 +66,7 @@ function main(e){
         let uri = `/nexdist/userchangepassword?action=save&userID=${sanitizeInput(userId)}&password=${sanitizeInput(currentPassword)}&newPassword=${sanitizeInput(newPassword)}`
         let responseData = fetch(uri).then(response => {
             if (!response.ok) {
-                alert("Gagal mereset password!!!");
+                showError("Gagal mereset password!!!");
                 
             }else if(response.ok){
                 showError('Password reset successfully!');
@@ -76,7 +76,7 @@ function main(e){
                 return data.json()
             })
             .catch(error => {
-                alert("Server error")
+                showError("Server error")
             });
         
             passwordFields.style.display = 'none';
@@ -110,7 +110,7 @@ function validatePasswordFields(userId, currentPassword, newPassword, confirmPas
         messages.push("Harap isi user ID");
     if (!currentPassword)
         messages.push("Harap isi password saat ini");
-    if (!checkRegex(newPassword, /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[_#\-$])(\s).{8,16}$/))
+    if (!checkRegex(newPassword, /^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[_#\-$])(?!.*\s).{8,16}$/))
         messages.push("Kata sandi setidaknya memiliki 8 karakterFormat minimal 1 angka, 1 huruf kecil, 1 huruf besar, 1 spesial karakter, tanpa spasi min 8 max 16 alfanumerik, contoh : aB4$12345");
     if (newPassword !== confirmPassword)
         messages.push("Sandi Baru dan Sandi Konfirmasi harus sama");
