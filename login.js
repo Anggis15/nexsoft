@@ -55,6 +55,7 @@ function main(e){
         const newPassword = document.getElementById('newPassword').value;
         const confirmPassword = document.getElementById('confirmPassword').value;
         let message = validatePasswordFields(userId,currentPassword,newPassword,confirmPassword)
+
         if (message){
             showError(message)
             passwordFields.style.display = 'none';
@@ -62,7 +63,6 @@ function main(e){
             forgotPasswordLink.style.display = 'block';
             textLogin.style.display = '';
         }else{
-            clearInputFields(["userIdReset", "currentPassword", "newPassword", "confirmPassword"]);
         let uri = `/nexdist/userchangepassword?action=save&userID=${sanitizeInput(userId)}&password=${sanitizeInput(currentPassword)}&newPassword=${sanitizeInput(newPassword)}`
         let responseData = fetch(uri).then(response => {
             if (!response.ok) {
@@ -84,6 +84,8 @@ function main(e){
             forgotPasswordLink.style.display = 'block';
             textLogin.style.display = '';
         }
+        clearInputFields(["userIdReset", "currentPassword", "newPassword", "confirmPassword"]);
+
         
     });
     
