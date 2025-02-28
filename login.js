@@ -46,6 +46,7 @@ function main(e){
                             .catch(error => {
                                 showError("Userid atau password salah!!!")
                             });
+        clearInputFields(["userId", "password"]);
     });
 
     document.getElementById('resetButton').addEventListener('click', function(event) {
